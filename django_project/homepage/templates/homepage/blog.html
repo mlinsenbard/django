@@ -1,0 +1,30 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+{% load staticfiles %}
+<h1 class="navebar-fixed-top">LinsenBlog</h1>
+<div class='fat'>
+	<hr>
+</div>
+{% for b in blogs %}
+	{% if b.picture %}
+		<img src="{{ b.picture }}" width='300px' height='300px'>
+	{% endif %}
+	<h2>{{ b.title }}</h2>
+	<h4>{{ b.subtitle }}</h4>
+	<p>{{ b.date }}</p>
+	<hr>
+	<div class="text-left">
+		{{ b.content|safe }}
+	</div>
+	<i><b>Tags: </i></b>| 
+	{% for t in b.tags.all %}
+		{{ t.subject }} |
+	{% endfor %}
+	<div class='fat'>
+		<hr>
+	</div>
+{% endfor %}
+{% endblock %}
+<script>
+
+</script>

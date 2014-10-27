@@ -1,0 +1,16 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+<h1>Projects</h1>
+<h4>Resume available <a href='/static/files/maxlinsenbard-resume.pdf'>here</a></h4>
+<hr>
+{% for p in projects %}
+<h2>{{ p.title }}</h2>
+	{% if p.picture %}
+		<img src="{{ p.picture }}" width=50% height=50%>
+	{% endif %}
+	<p>{{ p.description }}</p>
+	<h5><b>Links: </b></h5>
+	{{ p.links|safe }}
+	<hr>
+{% endfor %}
+{% endblock %}
