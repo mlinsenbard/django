@@ -9,15 +9,17 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os, sys
 BASE_DIR = '/home/django/django_project/'
 
+sys.path.insert(0, '/home/mlinsenbard/')
+import vars
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'pVDXkHwRTj7o5Wxk31o6W2wAFm4RfQbXexV53Wlcy5guDHhq5m'
+SECRET_KEY = vars.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
