@@ -24,7 +24,7 @@ class Project(models.Model):
 	title = models.CharField(max_length=64)
 	description = models.CharField(max_length=512)
 	# same as Blog pciture
-	picture = models.CharField(max_length=32, blank=True)
+	picture = models.CharField(max_length=128, blank=True)
 	links = models.TextField()
 
 	def __unicode__(self):

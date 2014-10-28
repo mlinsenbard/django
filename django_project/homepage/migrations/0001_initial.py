@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.CharField')(max_length=64)),
             ('subtitle', self.gf('django.db.models.fields.CharField')(max_length=64)),
             ('content', self.gf('django.db.models.fields.TextField')()),
-            ('picture', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
+            ('picture', self.gf('django.db.models.fields.CharField')(max_length=128, blank=True)),
             ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
         db.send_create_signal(u'homepage', ['BlogEntry'])
@@ -34,21 +34,13 @@ class Migration(SchemaMigration):
         ))
         db.create_unique(u'homepage_blogentry_tags', ['blogentry_id', 'tag_id'])
 
-        # Adding model 'Link'
-        db.create_table(u'homepage_link', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('url', self.gf('django.db.models.fields.CharField')(max_length=128)),
-            ('label', self.gf('django.db.models.fields.CharField')(max_length=128)),
-        ))
-        db.send_create_signal(u'homepage', ['Link'])
-
         # Adding model 'Project'
         db.create_table(u'homepage_project', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=64)),
             ('description', self.gf('django.db.models.fields.CharField')(max_length=512)),
-            ('picture', self.gf('django.db.models.fields.CharField')(max_length=32, blank=True)),
-            ('links', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['homepage.Link'])),
+            ('picture', self.gf('django.db.models.fields.CharField')(max_length=128, blank=True)),
+            ('links', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal(u'homepage', ['Project'])
 
@@ -63,9 +55,6 @@ class Migration(SchemaMigration):
         # Removing M2M table for field tags on 'BlogEntry'
         db.delete_table('homepage_blogentry_tags')
 
-        # Deleting model 'Link'
-        db.delete_table(u'homepage_link')
-
         # Deleting model 'Project'
         db.delete_table(u'homepage_project')
 
@@ -76,23 +65,17 @@ class Migration(SchemaMigration):
             'content': ('django.db.models.fields.TextField', [], {}),
             'date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'picture': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),
+            'picture': ('django.db.models.fields.CharField', [], {'max_length': '128', 'blank': 'True'}),
             'subtitle': ('django.db.models.fields.CharField', [], {'max_length': '64'}),
             'tags': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['homepage.Tag']", 'symmetrical': 'False'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '64'})
-        },
-        u'homepage.link': {
-            'Meta': {'object_name': 'Link'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'label': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'url': ('django.db.models.fields.CharField', [], {'max_length': '128'})
         },
         u'homepage.project': {
             'Meta': {'object_name': 'Project'},
             'description': ('django.db.models.fields.CharField', [], {'max_length': '512'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'links': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['homepage.Link']"}),
-            'picture': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),
+            'links': ('django.db.models.fields.TextField', [], {}),
+            'picture': ('django.db.models.fields.CharField', [], {'max_length': '128', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '64'})
         },
         u'homepage.tag': {

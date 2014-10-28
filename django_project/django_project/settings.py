@@ -22,7 +22,7 @@ import vars
 SECRET_KEY = vars.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -59,16 +59,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'h8uD57M4KF',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+DATABASES = vars.DATABASES
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
