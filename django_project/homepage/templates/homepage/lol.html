@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+    	<title>{% block title %}The Donger's Next Best Thingymabober!{% endblock %}</title>
+        <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+        <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+        <style>
+        body {
+            background-color: black;
+            background-position: center;
+            text-align: center;
+           	cursor: url(http://cur.cursors-4u.net/holidays/hol-5/hol445.ani), url(http://cur.cursors-4u.net/holidays/hol-5/hol445.gif), progress !important; /* End http://www.cursors-4u.com */
+        }
+        </style>
+    </head>
+
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    
+    <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Max Linsenbard</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/programming">Programming</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/lol">LoL</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <img src='{% static "img/lol.jpg" %}' width='35%'>
+
+    <div class="container">
+    	<div class="jumbotron">
+    	<h3>Welcome, summoner, to the latest and greatest in donger technology:</h3>
+    	<h2>The Spellimobulator!</h2>
+
+        <p>Enter your strength and see what champion spell is the most efficient in battle!</p>
+
+    	<form action="/lol/" method="post">
+    		{% csrf_token %}
+            {% if result %}
+                <h3>The strongest spell given your stats is {{ champion }}'s spell:</h3><br>
+                <h2>{{ spell }}</h2><br>
+                <h3> Which does <b style="color:red">{{ dps }}</b> DPS.</h3>
+                <a href='/lol/'>Click here to try again.</a>
+
+            {% else %}
+                <form action="/lol/" method="post">
+                    {% if sform.ad.errors %}
+                    <div class="alert alert-danger" role="alert">
+                    {{ sform.ad.errors }}
+                    </div>
+                    {% endif %}
+                    <h4 style="color:orange">{{ sform.ad.label }}</h4> {{ sform.ad }}<br><br>
+                    
+                    {% if sform.ap.errors %}
+                    <div class="alert alert-danger" role="alert">
+                    {{ sform.ap.errors }}
+                    </div>
+                    {% endif %}
+                    <h4 style="color:lightgreen">{{ sform.ap.label }}</h4> {{ sform.ap }}<br><br>
+                    
+                    {% if sform.cdr.errors %}
+                    <div class="alert alert-danger" role="alert">
+                    {{ sform.cdr.errors }}
+                    </div>
+                    {% endif %}
+                    <h4 style="color:blue">{{ sform.cdr.label }}</h4> {{ sform.cdr }}<br><br>
+                    <input type="submit" value="My body is ready" />
+                </form>
+            {% endif %}
+    </div>
+    </div>
+
+    </body>
+
+</html>
