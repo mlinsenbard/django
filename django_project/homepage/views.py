@@ -36,18 +36,43 @@ def lol(request):
 		if form.is_valid():
 			# Get values and call mostEfficient
 			values = (form.cleaned_data['ad'],form.cleaned_data['ap'],form.cleaned_data['cdr'])
-			result = mostEfficient(values)
+			topFive = mostEfficient(values)
 
-			champion = result[0]
-			spell = result[1]['name']
-			dps = result[2]
+			fi = {}
+			fi['champion'] = topFive[0][0]
+			fi['spell'] = topFive[0][1]['name']
+			fi['dps'] = topFive[0][2]
 
-			result = True
+			se = {}
+			se['champion'] = topFive[1][0]
+			se['spell'] = topFive[1][1]['name']
+			se['dps'] = topFive[1][2]
 
-			return render_to_response('homepage/lol.html',{'result':result, 
-				'champion':champion, 
-				'spell':spell,
-				'dps':dps},RequestContext(request))
+			th = {}
+			th['champion'] = topFive[2][0]
+			th['spell'] = topFive[2][1]['name']
+			th['dps'] = topFive[2][2]
+
+			fo = {}
+			fo['champion'] = topFive[3][0]
+			fo['spell'] = topFive[3][1]['name']
+			fo['dps'] = topFive[3][2]
+
+			fif = {}
+			fif['champion'] = topFive[4][0]
+			fif['spell'] = topFive[4][1]['name']
+			fif['dps'] = topFive[4][2]
+
+			result=True
+
+			return render_to_response('homepage/lol.html',
+				{'result':result,
+				'fi':fi,
+				'se':se,
+				'th':th,
+				'fo':fo,
+				'fif':fif},
+				RequestContext(request))
 
 		else:
 			result = False

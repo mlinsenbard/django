@@ -55,10 +55,17 @@
     	<form action="/lol/" method="post">
     		{% csrf_token %}
             {% if result %}
-                <h3>The strongest spell given your stats is {{ champion }}'s spell:</h3><br>
-                <h2>{{ spell }}</h2><br>
-                <h3> Which does <b style="color:red">{{ dps }}</b> DPS.</h3>
+
+                <h2><b>1. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ fi.champion|lower }}/">{{ fi.champion }}</a></b> - {{ fi.spell }}: <b style="color:red">{{ fi.dps }}</b><br></h2>
+                <p>
+                    <b>2. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ se.champion|lower }}/">{{ se.champion }}</a></b> - {{ se.spell }}: <b style="color:red">{{ se.dps }}</b><br>
+                    <b>3. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ th.champion|lower }}/">{{ th.champion }}</a></b> - {{ th.spell }}: <b style="color:red">{{ th.dps }}</b><br>
+                    <b>4. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ fo.champion|lower }}/">{{ fo.champion }}</a></b> - {{ fo.spell }}: <b style="color:red">{{ fo.dps }}</b><br>
+                    <b>5. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ fif.champion|lower }}/">{{ fif.champion }}</a></b> - {{ fif.spell }}: <b style="color:red">{{ fif.dps }}</b>
+                </p>
+
                 <a href='/lol/'>Click here to try again.</a>
+
 
             {% else %}
                 <form action="/lol/" method="post">
@@ -85,9 +92,35 @@
                     <input type="submit" value="My body is ready" />
                 </form>
             {% endif %}
-    </div>
-    </div>
 
+            <p><button id="toggle">See More About Spellimobulator</button></p>
+            <p id="info" hidden>
+                Spellimobulator works by calucalating the DPS of all damaging champion spells, and returning the top 5 results. 100+ of these spells have DPS values calculated by hand since they require more attention than a standard 'nuke' spell.<br><br>
+
+                All spells are calculated with the following criteria:<br>
+                1. Damage is only dealt to one, 'champion' target. (So no, Nunu's Consume is not considered a Damaging spell to Champions)
+                2. No mana, enery, or other resource is taken into consideration. Spellimobulator assumes these resources are infinite.
+                3. No previously active spells, passives, or other abilites are considered when caluclating DPS. Passives are also not considered in these calculations at all.
+                4. These calculations are in no way accurate, as no resistances are taken into consideration.
+                5. Spells that do percent health damage will not have that damage considered as the target's health is not a given variable.<br><br>
+
+                If you would like to see more on the Spellimobulator, visit the github repository for it <a href="https://github.com/mlinsenbard/gg">here</a>. If you want to see how I hooked the python code into my website, visit the <a href="https://github.com/mlinsenbard/django">github repo</a> for my website. This web version will be more up to date than the standalone version, so be sure to check for updates.<br><br>
+
+                <h2>Champions Currently unsupported</h2>
+                <ul>
+                    <li>Kalista and beyond</li>
+                </ul>
+            </p>
+    </div>
+    </div>
     </body>
+
+    <script>
+        $(document).ready(function(){
+            $("#toggle").click(function(){
+                $("#info").toggle("fast");
+            });
+        });
+</script>
 
 </html>

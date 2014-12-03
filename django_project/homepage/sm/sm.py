@@ -69,7 +69,11 @@ def getNukeDPS(spell, values):
 
 			# We have our damage, cooldown, and ratios. Time to calculate dps
 			totalDamage = damageVal + (apRatio * values[AP]) + (adRatio * values[AD]) + (bonusADRatio * values[AD])
-			dps = totalDamage/(cooldown-(cooldown*(values[CDR]/100)))
+			try:
+				dps = totalDamage/(cooldown-(cooldown*(values[CDR]/100)))
+			except Exception:
+				# Return -1 to signify error
+				dps = -1
 
 			return dps
 
@@ -83,9 +87,8 @@ def getNukeDPS(spell, values):
 # highest DPS given AD/AP/CDR
 #############################
 def mostEfficient(values):
-	bestChamp = {}
-	bestSpell = {}
-	bestSpellDPS = 0
+	topFive = [None, None, None, None, None]
+	bestSpellDPS = [0,0,0,0,0]
 
 	sortedChamps = collections.OrderedDict(sorted(ALL_CHAMPS.items()))
 	for k,v in sortedChamps.iteritems():
@@ -101,14 +104,26 @@ def mostEfficient(values):
 					# Run normal data scraping & calculations
 					dps = getNukeDPS(s, values)
 
-				# See if the current calc'd dps is best
-				if dps > bestSpellDPS:
-					bestSpellDPS = dps
-					bestSpell = s
-					bestChamp = k
-		print ''
+				# Working on getting top 5
+				currTuple = (k,s,dps)
+				for i, d in enumerate(bestSpellDPS):
+					if d == 0 and not topFive[i]:
+						# Base case for if there are no values yet
+						bestSpellDPS[i] = dps
+						topFive[i] = currTuple
+						break
+					elif dps > d:
+						# swap dps and d
+						t = bestSpellDPS[i]
+						bestSpellDPS[i] = dps
+						dps = t
+						# swap currTuple and topFive[i]
+						t = topFive[i]
+						topFive[i] = currTuple
+						currTuple = t
 
-	return (bestChamp, bestSpell, bestSpellDPS)
+	# Do a sanity check to make sure we have a top 5 filled out
+	return topFive
 
 
 
