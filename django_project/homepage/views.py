@@ -5,6 +5,10 @@ from django.shortcuts import render_to_response, render
 from models import *
 from forms import SpellForm
 from sm.sm import mostEfficient
+import sys
+
+sys.path.insert(0, '/home/mlinsenbard/')
+import vars
 
 def home(request):
     return render_to_response('homepage/home.html',{},RequestContext(request))

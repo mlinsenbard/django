@@ -1,0 +1,651 @@
+AD: 1 AP: 1 CDR: 1
+
+Aatrox
+Dark Flight
+20.8833333333
+
+Blades of Torment
+27.025
+
+Massacre
+5.72857142857
+
+
+Ahri
+Orb of Deception
+40.1
+
+Fox-Fire
+44.912
+
+Charm
+16.7083333333
+
+Spirit Rush
+5.63625
+
+
+Akali
+Mark of the Assassin
+28.85
+
+Crescent Slash
+131.0
+
+Shadow Dance
+16.7
+
+
+Alistar
+Pulverize
+18.5
+
+Headbutt
+27.57
+
+
+Amumu
+Bandage Toss
+35.0875
+
+Despair
+3.01
+
+Tantrum
+1.75
+
+Curse of the Sad Mummy
+3.18909090909
+
+
+Anivia
+Flash Frost
+45.125
+
+Frostbite
+35.1
+
+Glacial Storm
+160.25
+
+
+Annie
+Disintegrate
+55.2
+
+Incinerate
+31.35625
+
+Summon: Tibbers
+25.1225
+
+
+Ashe
+Ranger's Focus
+0.075
+
+Volley
+20.25
+
+Enchanted Crystal Arrow
+7.5125
+
+
+Azir
+Conquering Sands
+24.25
+
+Shifting Sands
+12.0266666667
+
+Emperor's Divide
+3.006
+
+
+Bard
+Cosmic Binding
+37.2357142857
+
+Caretaker's Shrine
+None
+
+Magical Journey
+None
+
+Tempered Fate
+None
+
+
+Blitzcrank
+Rocket Grab
+18.8125
+
+Power Fist
+None
+
+Static Field
+16
+
+
+Brand
+Sear
+40.1083333333
+
+Pillar of Flame
+25.56
+
+Conflagration
+26.31875
+
+Pyroclasm
+4.67333333333
+
+
+Braum
+Winter's Bite
+41.6666666667
+
+Glacial Fissure
+3.506
+
+
+Caitlyn
+Piltover Peacemaker
+30.2166666667
+
+Yordle Snap Trap
+35.075
+
+90 Caliber Net
+28.08
+
+Ace in the Hole
+11.7
+
+
+Cassiopeia
+Noxious Blast
+58.8625
+
+Miasma
+3.01
+
+Twin Fang
+31.11
+
+Petrifying Gaze
+3.505
+
+
+Chogath
+Rupture
+34.0
+
+Feral Scream
+21.2076923077
+
+Feast
+10.845
+
+
+Corki
+Phosphorus Bomb
+35.125
+
+Valkyrie
+32.2142857143
+
+Gatling Gun
+17.1
+
+Missile Barrage
+32.5875
+
+
+Darius
+Decimate
+63.21
+
+Noxian Guillotine
+3.759375
+
+
+Diana
+Crescent Strike
+33.45
+
+Pale Cascade
+21.06
+
+Lunar Rush
+14.7066666667
+
+
+DrMundo
+Infected Cleaver
+70.0
+
+Burning Agony
+95.2
+
+
+Draven
+Stand Aside
+15.0357142857
+
+Whirling Death
+8.35777777778
+
+
+Ekko
+Timewinder
+17.1571428571
+
+Parallel Convergence
+None
+
+Phase Dive
+24.3142857143
+
+Chronobreak
+7.14380957143
+
+
+Elise
+Neurotoxin / Venomous Bite
+30.005
+
+Volatile Spiderling / Skittering Frenzy
+22.9833333333
+
+Venomous Bite / Neurotoxin
+36.6716666667
+
+Skittering Frenzy / Volatile Spiderling
+None
+
+
+Evelynn
+Hate Spike
+60.8333333333
+
+Ravage
+25.7111111111
+
+
+Ezreal
+Mystic Shot
+29.1
+
+Essence Flux
+27.8666666667
+
+Arcane Shift
+25.0681818182
+
+Trueshot Barrage
+8.14875
+
+
+FiddleSticks
+Drain
+150.375
+
+Dark Wind
+13.2227272727
+
+Crowstorm
+12.5173076923
+
+
+Fiora
+Lunge
+13.2
+
+Bladework
+7.14285714286
+
+Grand Challenge
+None
+
+
+Fizz
+Urchin Strike
+21.9333333333
+
+Playful / Trickster
+33.84375
+
+Chum the Waters
+6.44285714286
+
+
+Galio
+Resolute Smite
+42.9428571429
+
+Righteous Gust
+26.7222222222
+
+
+Gangplank
+Parrrley
+24.2
+
+Powder Keg
+-1
+
+Cannon Barrage
+12.1726315789
+
+
+Garen
+Judgment
+40.3666666667
+
+Demacian Justice
+6.5625
+
+
+Gnar
+Boomerang Throw / Boulder Toss
+17.12
+
+Hyper / Wallop
+13
+
+Hop / Crunch
+15.0
+
+GNAR!
+5.00875
+
+
+Gragas
+Barrel Roll
+34.3714285714
+
+Body Slam
+23.3833333333
+
+Explosive Cask
+5.00875
+
+
+Graves
+Buckshot
+45.75
+
+Smoke Screen
+16.2875
+
+Collateral Damage
+6.89375
+
+
+Hecarim
+Rampage
+50.15
+
+Spirit of Dread
+13.3777777778
+
+Devastating Charge
+11.28125
+
+Onslaught of Shadows
+3.51
+
+
+Heimerdinger
+H-28G Evolution Turret
+89.6316993464
+
+Hextech Micro-Rockets
+16.4045454545
+
+CH-2 Electron Storm Grenade
+22.06
+
+UPGRADE!!!
+14.4788888889
+
+
+Irelia
+Bladesurge
+23.5
+
+Equilibrium Strike
+30.0625
+
+Transcendent Blades
+12.84
+
+
+Janna
+Howling Gale
+26.565
+
+Zephyr
+23.375
+
+
+JarvanIV
+Dragon Strike
+41.85
+
+Demacian Standard
+21.8909090909
+
+Cataclysm
+5.01666666667
+
+
+Jax
+Leap Strike
+38.6
+
+Empower
+60.2
+
+Counter Strike
+18.8125
+
+
+Jayce
+To the Skies! / Shock Blast
+38.5
+
+Lightning Field / Hyper Charge
+38.025
+
+Shock Blast
+40.15
+
+
+Jinx
+Zap!
+35.2333333333
+
+Flame Chompers!
+18.8125
+
+Super Mega Death Rocket!
+0.751666666667
+
+
+Kalista
+Pierce
+31.375
+
+Sentinel
+0.666666666667
+
+Rend
+-1
+
+Fate's Call
+None
+
+
+Karma
+Inner Flame
+52.12
+
+Focused Resolve
+21.7416666667
+
+Mantra
+None
+
+
+Karthus
+Lay Waste
+120.3
+
+Defile
+110.2
+
+Requiem
+3.44125
+
+
+Kassadin
+Null Sphere
+18.9666666667
+
+Force Pulse
+30.1166666667
+
+Riftwalk
+6
+
+
+Katarina
+Bouncing Blades
+20.05625
+
+Sinister Steel
+45.2125
+
+Shunpo
+26.7083333333
+
+Death Lotus
+16.8055555556
+
+
+Kayle
+Reckoning
+32.7
+
+
+Kennen
+Thundering Shuriken
+58.9375
+
+Electrical Surge
+30.925
+
+Lightning Rush
+40.9333333333
+
+Slicing Maelstrom
+5.26
+
+
+Khazix
+Taste Their Fear
+74.1866666667
+
+Void Spike
+20.15
+
+Leap
+17.1
+
+
+KogMaw
+Caustic Spittle
+35.0625
+
+Void Ooze
+21.725
+
+Living Artillery
+160.8
+
+
+Leblanc
+Sigil of Malice
+25.9
+
+Distortion
+24.56
+
+Ethereal Chains
+28.1
+
+Mimic
+25.0541666667
+
+
+LeeSin
+Sonic Wave / Resonating Strike
+48.8285714286
+
+Tempest / Cripple
+20.1
+
+Dragon's Rage
+10.0333333333
+
+
+Leona
+Shield of Daybreak
+22.9
+
+Eclipse
+18.6
+
+Zenith Blade
+24.4888888889
+
+Solar Flare
+5.84666666667
+
+
+Lissandra
+Ice Shard
+63.55
+
+Ring of Frost
+23.04
+
+Glacial Path
+20.8833333333
+
+Frozen Tomb
+4.37875
+
+
+Lucian
+Piercing Light
+40.24
+
+Ardent Blaze
+22.09
+
+The Culling
+10.0583333333
+
+
+Lulu
+Glitterlance
+37.2142857143
+
+Help, Pix!
+20.04
+
+
+Lux

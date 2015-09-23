@@ -1,17 +1,34 @@
 {% extends "homepage/base.html" %}
 {% block title %}Projects{% endblock %}
 {% block content %}
+{% load staticfiles %}
 <h1>Projects</h1>
+<div class='navbar-fixed-bottom'>
+	<div class="elevator-button">
+		<a class="btn btn-info">Back to Top</a>
+	</div>
+</div>
 <h4>Resume available <a href='/static/files/maxlinsenbard-resume.pdf'>here</a></h4>
 <hr>
 {% for p in projects %}
 <h2>{{ p.title }}</h2>
 	{% if p.picture %}
-		<img src="{{ p.picture }}" width=50% height=50%>
+		<img src="{{ p.picture }}" width=60%>
 	{% endif %}
 	<p>{{ p.description }}</p>
 	<h5><b>Links: </b></h5>
 	{{ p.links|safe }}
 	<hr>
 {% endfor %}
+<script>
+// Elevator script included on the page, already.
+
+window.onload = function() {
+  var elevator = new Elevator({
+    element: document.querySelector('.elevator-button'),
+    mainAudio: '{% static "audio/ohyeah.mp3" %}',
+    endAudio: '{% static "audio/ooohyeah.wav" %}'
+  });
+}
+</script>
 {% endblock %}

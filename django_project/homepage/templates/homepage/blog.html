@@ -2,13 +2,18 @@
 {% block title %}Linsenblog - Updated eventually!{% endblock %}
 {% block content %}
 {% load staticfiles %}
-<h1 class="navebar-fixed-top">LinsenBlog</h1>
+<h1>LinsenBlog</h1>
+<div class='navbar-fixed-bottom'>
+	<div class="elevator-button">
+		<a class="btn btn-info">Back to Top</a>
+	</div>
+</div>
 <div class='fat'>
 	<hr>
 </div>
 {% for b in blogs %}
 	{% if b.picture %}
-		<img src="{{ b.picture }}" width='300px' height='300px'>
+		<img src="{{ b.picture }}" width=60%>
 	{% endif %}
 	<h2>{{ b.title }}</h2>
 	<h4>{{ b.subtitle }}</h4>
@@ -25,7 +30,18 @@
 		<hr>
 	</div>
 {% endfor %}
-{% endblock %}
 <script>
-
 </script>
+
+<script>
+// Elevator script included on the page, already.
+
+window.onload = function() {
+  var elevator = new Elevator({
+    element: document.querySelector('.elevator-button'),
+    mainAudio: '{% static "audio/ohyeah.mp3" %}',
+    endAudio: '{% static "audio/ooohyeah.wav" %}'
+  });
+}
+</script>
+{% endblock %}

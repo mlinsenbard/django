@@ -22,7 +22,7 @@ import vars
 SECRET_KEY = vars.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -60,6 +60,11 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = vars.DATABASES
+
+# Credentials for mysql db 
+MYSQL_USER = vars.MYSQL_USER
+MYSQL_DB = vars.MYSQL_DB
+MYSQL_PW = vars.MYSQL_PW
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

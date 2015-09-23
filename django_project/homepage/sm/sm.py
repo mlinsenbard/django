@@ -90,8 +90,14 @@ def mostEfficient(values):
 	topFive = [None, None, None, None, None]
 	bestSpellDPS = [0,0,0,0,0]
 
+	# Open resutls file for reading
+	fp = open('..\..\static\files\results.txt', 'w')
+	s = "AD: "+str(values[0])+" AP: "+str(values[1])+" CDR: "+str(values[2])+"\n\n"
+	fp.write(s)
 	sortedChamps = collections.OrderedDict(sorted(ALL_CHAMPS.items()))
 	for k,v in sortedChamps.iteritems():
+		fp.write(k)
+		fp.write('\n')
 		for s in v['spells']:
 			# If the spell isnt even to be considered, do nothing
 			if s['name'] in DISREGARDED_SPELLS:
@@ -106,6 +112,10 @@ def mostEfficient(values):
 
 				# Working on getting top 5
 				currTuple = (k,s,dps)
+				fp.write(s['name'])
+				fp.write('\n')
+				fp.write(str(dps))
+				fp.write('\n\n')
 				for i, d in enumerate(bestSpellDPS):
 					if d == 0 and not topFive[i]:
 						# Base case for if there are no values yet
@@ -121,8 +131,10 @@ def mostEfficient(values):
 						t = topFive[i]
 						topFive[i] = currTuple
 						currTuple = t
+		fp.write('\n')
 
 	# Do a sanity check to make sure we have a top 5 filled out
+	fp.close()
 	return topFive
 
 
