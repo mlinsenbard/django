@@ -18,14 +18,29 @@ def blog(request):
 	# for now, just getting ALL blog posts and displaying them
 	blogs = BlogEntry.objects.all().order_by('-date')
 
-	return render_to_response('homepage/blog.html',{'blogs':blogs},RequestContext(request))
+	if request.method == "GET" and "tag" in request.GET:
+		tag = request.GET["tag"];
+		filteredBlogs = [];
 
-def programming(request):
+		for blog in blogs:
+			for btag in blog.tags.all():
+				if tag == btag.subject:
+					filteredBlogs.append(blog);
+
+		if len(filteredBlogs) > 0:
+			return render_to_response('homepage/blog.html',{'blogs':filteredBlogs, 'notag':False, 'filter':tag},RequestContext(request))
+		else:
+			return render_to_response('homepage/blog.html',{'blogs':filteredBlogs, 'notag':True, 'filter':tag},RequestContext(request))
+
+	else:
+		return render_to_response('homepage/blog.html',{'blogs':blogs},RequestContext(request))
+
+def projects(request):
 	# Learn Ajax you tease
 	# for now, just getting ALL projects and displaying them
 	projects = Project.objects.all().order_by('title')
 
-	return render_to_response('homepage/programming.html',{'projects':projects},RequestContext(request))
+	return render_to_response('homepage/projects.html',{'projects':projects},RequestContext(request))
 
 def music(request):
 	return render_to_response('homepage/music.html',{},RequestContext(request))

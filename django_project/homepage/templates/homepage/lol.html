@@ -39,7 +39,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/programming">Programming</a></li>
+            <li><a href="/projects">Programming</a></li>
             <li><a href="/music">Music</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/lol">LoL</a></li>
@@ -51,18 +51,17 @@
 
     <div class="container">
     	<div class="jumbotron">
-        <!-- GO HOME -->
+            <h3> This tool is under construction due to an API change</h3>
+        <!--
     	<h3>Welcome, summoner, to the latest and greatest in donger technology:</h3>
     	<h2>The Spellimobulator!</h2>
 
         <p>Enter your strength and see what champion spell is the most efficient in battle!</p>
 
-        <!-- "lol" -->
     	<form action="/lol/" method="post">
     		{% csrf_token %}
             {% if result %}
 
-                <!-- There's probably a better way to do this. -->
                 <h2><b>1. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ fi.champion|lower }}/">{{ fi.champion }}</a></b> - {{ fi.spell }}: <b style="color:red">{{ fi.dps }}</b><br></h2>
                 <p>
                     <b>2. <a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/{{ se.champion|lower }}/">{{ se.champion }}</a></b> - {{ se.spell }}: <b style="color:red">{{ se.dps }}</b><br>
@@ -72,7 +71,6 @@
                 </p>
 
                 <a href='/lol/'>Click here to try again.</a><br>
-                <!--<a href='{% static "files/results.txt" %}'>Click here for a full text printout of each calculation (doesnt work yet :( )</a> -->
 
             {% else %}
                 <form action="/lol/" method="post">
@@ -98,13 +96,11 @@
                     <h4 style="color:blue">{{ sform.cdr.label }}</h4> {{ sform.cdr }}<br><br>
                     <input type="submit" class="btn btn-danger" value="My body is ready (Go)" />
                 </form>
-                <!-- here comes another chinese earthquake eeeeebrbrbrbrbrbrb-->
                 <br><br>
             <p><button id="toggle" class="btn btn-primary">See More About Spellimobulator</button></p>
             <p id="info" class="text-left" hidden>
                 Spellimobulator works by calucalating the DPS of all damaging champion spells, and returning the top 5 results. 100+ of these spells have DPS values calculated by hand since they require more attention than a standard 'nuke' spell.<br><br>
 
-                <!-- Fucking hell, TL;DR -->
                 All spells are calculated with the following criteria:<br>
                 <b>1.</b> Damage is only dealt to one, 'champion' target. (So no, Nunu's Consume is not considered a Damaging spell to Champions)<br>
                 <b>2.</b> No mana, energy, or other resource is taken into consideration. Spellimobulator assumes these resources are infinite.<br>
@@ -118,7 +114,8 @@
                 - Kalista and any champions after.
             </p>
             {% endif %}
-    </div>
+        </div>
+     -->
     </div>
     <small style="color:white">All Logos and Names © Riot Games</small>
     </body>

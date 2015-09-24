@@ -11,6 +11,11 @@
 <div class='fat'>
 	<hr>
 </div>
+{% if notag %}
+<p class="bg-danger">No blog posts with tag <b>"{{ filter }}"</b> found. <a href="/blog">Click to show all posts</a></p>
+{% elif filter %}
+<p class="bg-info">Showing posts with tag <b>"{{ filter }}"</b>. <a href="/blog">Click to sow all posts.</a></p>
+{% endif %}
 {% for b in blogs %}
 	{% if b.picture %}
 		<img src="{{ b.picture }}" width=60%>
@@ -24,7 +29,7 @@
 	</div>
 	<i><b>Tags: </i></b>| 
 	{% for t in b.tags.all %}
-		{{ t.subject }} |
+		<a href="/blog?tag={{ t.subject }}">{{ t.subject }}</a> |
 	{% endfor %}
 	<div class='fat'>
 		<hr>
