@@ -14,7 +14,7 @@
 {% if notag %}
 <p class="bg-danger">No blog posts with tag <b>"{{ filter }}"</b> found. <a href="/blog">Click to show all posts</a></p>
 {% elif filter %}
-<p class="bg-info">Showing posts with tag <b>"{{ filter }}"</b>. <a href="/blog">Click to sow all posts.</a></p>
+<p class="bg-info">Showing posts with tag <b>"{{ filter }}"</b>. <a href="/blog">Click to show all posts.</a></p>
 {% endif %}
 {% for b in blogs %}
 	{% if b.picture %}
