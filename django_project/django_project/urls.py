@@ -13,6 +13,7 @@ urlpatterns = patterns('homepage.views',
     url(r'^music/$', 'music'),
     url(r'^contact/$', 'contact'),
     url(r'^lol/$', 'lol'),
+    url(r'^fight/$', 'fight'),
     url(r'^admin/', include(admin.site.urls)),
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

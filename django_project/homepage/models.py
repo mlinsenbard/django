@@ -29,3 +29,10 @@ class Project(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+class Fight(models.Model):
+	instigator = models.CharField(max_length=32)
+	target = models.CharField(max_length=32)
+	i_hp = models.FloatField(default=100)
+	t_hp = models.FloatField(default=100)
+	turn = models.BooleanField(default=True)
