@@ -53,7 +53,7 @@ def contact(request):
 	return render_to_response('homepage/contact.html',{},RequestContext(request))
 
 def mxpo(request):
-	return render_to_response('homepage/mxpo.html',{}.RequestContext(request))
+	return render_to_response('homepage/mxpo.html',{},RequestContext(request))
 
 def lol(request):
 	if request.method == "POST":
