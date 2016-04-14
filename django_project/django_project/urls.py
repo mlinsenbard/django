@@ -11,7 +11,7 @@ urlpatterns = patterns('homepage.views',
     url(r'^projects/$', 'projects'),
     url(r'^music/$', 'music'),
     url(r'^contact/$', 'contact'),
-    url(r'^lol/$', 'lol'),
+    # url(r'^lol/$', 'lol'),
     url(r'^mxpo/$', 'mxpo'),
     url(r'^admin/', include(admin.site.urls)),
 )
